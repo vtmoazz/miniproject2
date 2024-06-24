@@ -1,3 +1,19 @@
+/*Write a program in C language to input a one dimensional array of marks (>=0 and <=100) and do following tasks:
+0. Print out the list;
+1. Find maximum marks and print to screen;
+2. Find marks that are greater than or equal to average of all the marks;
+3. Insert a mark into the array;
+4. Delete a mark from the array;
+5. Sort the array (Ascending Order)
+6. Input two float numbers a and b (a<b). Show marks that are greater than or equal to a and less than or equal to b.
+
+Demo output:
+
+Suppose that I have an array of marks, such that: 35 67 50 67
+1. (1, 67), (3, 67). 1 is index of 67 in the array, is the same with (3, 67)
+2. (1, 67), (3, 67). 
+…
+6. Let a=45 and b=55, so the output is (50, 2).*/
 #include<stdio.h>
 void Input(int *p, int *m ){
 	printf("Enter n element: ");
@@ -49,24 +65,28 @@ void Insert(int a[], int n, int position, int value){
         (n)++;
 	}
 }
-void swap(int &x,int &y){
-   int temp = x;
-   x=y;
-   y=temp;	
+void swap(int* x,int *y){
+   int temp = *x;
+   *x= *y;
+   *y= temp;	
 }
-void BubbleSort(int a[], int n){
-    int temp,i,j; 
-    for ( i = 0; i < n; i++){
-	for ( j = i + 1; j < n; j++){
-		if ((a[j])> (a[j+1])){
-             swap(a[i],a[j]);      
+void BubbleSort(int a[], int size){
+    int i,j; 
+    for ( i = 0; i < size-1; i++){
+		for ( j = i + 1; j < size; j++){
+			if ((a[j])> (a[j+1])){
+             swap(&a[j],&a[j+1]);      
 			}
 		}
 	}
 }
+void menu(){ 
+printf("3.Insert a mark into the array\n4.Delete a mark from the array\n5.Sort the array (Ascending Order)\n6.Input two float numbers a and b (a<b)\n");
+	
+}
 int main(){
 	int a[100],n,position,value;
-	printf("3.Insert a mark into the array\n4.Delete a mark from the array\n5.Sort the array (Ascending Order)\n6.Input two float numbers a and b (a<b)\n");
+	menu();
     Input(a,&n);
 	Print(a,n);
 	Max(a,n);
@@ -76,7 +96,7 @@ int main(){
 //	printf("Enter a value in this new element: ");
 //	scanf("%d\n",&value);
 //	Insert(a,n,position,value);
-	BubbleSort(a,n);
+	BubbleSort(a, size);
 	printf("\n");
     Print(a,n);	
     
