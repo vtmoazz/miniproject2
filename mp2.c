@@ -1,6 +1,18 @@
 #include<stdio.h>
-// xu li loi input, insert tiep tuc ko,
+// xu li loi input, insert tiep tuc cho toi khi user dừng lại, 
+// xu li loi delete
+// xu li loi khoang trang
+/* Demo output:
+
+Suppose that I have an array of marks, such that: 35 67 50 67
+1. (1, 67), (3, 67). 1 is index of 67 in the array, is the same with (3, 67)
+2. (1, 67), (3, 67). 
+…
+6. Let a=45 and b=55, so the output is (50, 2).
+*/
 // after deleting:, deleting array emty thong bao empty quay ve menu, cho delete nhieu vi tri
+
+
 //Write a program in C language to input a one dimensional array of marks (>=0 and <=100) and do following tasks:
 //0. Print out the list;
 //1. Find maximum marks and print to screen;
